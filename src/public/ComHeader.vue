@@ -9,7 +9,7 @@
                         </a>
                         <a class="menu-item fl ht" href="#">免费注册</a>
                     </li>
-                    <li class="fl J_login_status dn islogin">
+                    <li class="fl J_login_status dn islogin" v-show="hide">
                         <a href="#" class="userinfo" target="self"></a>
                         <a href="#" style="margin:0 10px" title="退出" target="self">退出</a>
                     </li>
@@ -21,7 +21,7 @@
                             <span>我的商城</span>
                             <i class="dd"></i>
                         </a>
-                        <ul class="sub-panel">
+                        <ul class="sub-panel" v-show="hide">
                             <li>
                                 <a class="J_chgurl" href="#">我的订单</a>
                             </li>
@@ -63,9 +63,9 @@
                     </li>
                     <li class="fl dropdown weixin">
                         <a href="" class="fl ico"></a>
-                        <div class="sub-panel wx-box">
-                            <span class="arrow-b">◆</span>
-                            <span class="arrow-a">◆</span>
+                        <div class="sub-panel wx-box" v-show="hide">
+                            <!-- <span class="arrow-b">◆</span>
+                            <span class="arrow-a">◆</span> -->
                             <p class="n"> 扫描二维码
                                 <br>关注官方微信</p>
                             <img src="" alt="微信二维码">
@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div class="m-top-sidebar m-sdb-sale J-sdb" style="z-index:401;">
+        <div class="m-top-sidebar m-sdb-sale J-sdb" style="z-index:401;" v-show="hide">
             <div class="t-main">
                 <div class="tb-tabs">
                     <div class="tb-tabs-up">
@@ -152,30 +152,87 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="m-top-nav editable">
-            <div class="main-container new-year">
-                <ul class="main-nav">
-                    <li class="nav-item">
-                        <a class="menu-item menu-item-active" href="" >首页</a>
-                    </li>
-                </ul>
-            </div>
+        
+            <div class="m-top-nav editable">
+                <div class="main-container new-year">
+                    <ul class="main-nav">
+                       <li class="nav-item">
+                           <a class="menu-item menu-item-active" href="" >首页</a>
+                       </li>
+                     </ul>
+                 </div>
+             </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-  name: "Header",
+  name: "ComHeader",
   data() {
-    return {
-      msg: "Welcome to Your Vue.js App"
-    };
+      return {
+
+      };
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+body{
+    margin:0;
+    padding: 0;
+    width: 100%;
+}
+li {
+    display: inline-block;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+}
+.header {
+    width:100%;
+    height: auto;
+    max-height: 180px;
+    
+}
+.m-top-bar {
+    width: 100%;
+}
+.m-top-bar .container {
+    width: 80%;
+    height:30px;
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.m-top-bar .container .fl{
+    height: 30px;
+    float: left;
+} 
+
+.m-top-bar .container .fr{
+    height: 30px;
+    float:right;
+}
+.container .fr .sub-panel {
+    
+}
+.m-top-bar .container .fr .sub-panel li{
+    display: block;
+    position: relative;
+    width: 70px;
+    height: 20px;
+    line-height: 20px;
+}
+li,a{ 
+    color: #777;
+    font-size: 13px;
+}
+.m-top-bgi {
+    width: 100%;
+    height:160px;
+    background-color: #2a1a2b;
+}
 </style>
